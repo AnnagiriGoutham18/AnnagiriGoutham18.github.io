@@ -2,258 +2,615 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Goutham | Data Analyst Portfolio</title>
-  <meta name="description" content="Goutham's Data Analyst portfolio showcasing Excel, SQL, Power BI and Python projects.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030713">
+<meta name="description" content="Annagiri Goutham | Data Analyst Portfolio">
+<title>GOUTHAM — 3D Data Analyst Portfolio</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b1120;
-      color: #e5e7eb;
-      line-height: 1.7;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 8%;
-      background: #111827;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav h2 {
-      color: #38bdf8;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #38bdf8;
-    }
-
-    section {
-      padding: 75px 10%;
-    }
-
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 60px);
-      line-height: 1.2;
-      margin-bottom: 15px;
-    }
-
-    .highlight {
-      color: #38bdf8;
-    }
-
-    .hero p, .about p {
-      max-width: 700px;
-      color: #cbd5e1;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 22px;
-      background: #0284c7;
-      color: white;
-      border-radius: 7px;
-      text-decoration: none;
-      width: fit-content;
-    }
-
-    .btn:hover {
-      background: #0369a1;
-    }
-
-    h2.section-title {
-      font-size: 32px;
-      margin-bottom: 25px;
-      color: #38bdf8;
-    }
-
-    .skills, .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: #172033;
-      border: 1px solid #263449;
-      padding: 22px;
-      border-radius: 12px;
-    }
-
-    .card h3 {
-      color: #38bdf8;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #cbd5e1;
-      font-size: 14px;
-    }
-
-    .card a {
-      display: inline-block;
-      margin-top: 15px;
-      color: #38bdf8;
-    }
-
-    #contact a {
-      color: #38bdf8;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #111827;
-      color: #94a3b8;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        padding: 15px 5%;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      nav div {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      nav a {
-        margin: 0;
-      }
-
-      section {
-        padding: 55px 7%;
-      }
-    }
-  </style>
+<style>
+:root {
+  --bg:#030713;
+  --panel:rgba(10,24,48,.72);
+  --blue:#00c8ff;
+  --cyan:#91f5ff;
+  --white:#edfaff;
+  --muted:#93a9c4;
+  --border:rgba(0,200,255,.2);
+}
+* {margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body {
+  background:var(--bg);
+  color:var(--white);
+  font-family:Inter,sans-serif;
+  overflow-x:hidden;
+}
+a {color:inherit;text-decoration:none}
+#universe {
+  position:fixed;inset:0;width:100%;height:100%;
+  z-index:-2;pointer-events:none;
+}
+body:before {
+  content:"";position:fixed;inset:0;z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 50% 35%,transparent 0%,#030713 90%),
+    linear-gradient(rgba(0,200,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,200,255,.025) 1px,transparent 1px);
+  background-size:auto,50px 50px,50px 50px;
+}
+.container {width:min(1160px,90%);margin:auto}
+header {
+  position:fixed;top:0;left:0;width:100%;z-index:50;
+  background:rgba(3,7,19,.75);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+nav {
+  height:76px;display:flex;align-items:center;
+  justify-content:space-between;
+}
+.logo {
+  font:800 19px Orbitron,sans-serif;
+  color:var(--cyan);
+  letter-spacing:2px;
+  text-shadow:0 0 20px var(--blue);
+}
+.navlinks {display:flex;list-style:none;gap:30px}
+.navlinks a {
+  color:var(--muted);font-size:11px;
+  letter-spacing:1.5px;transition:.3s;
+}
+.navlinks a:hover {color:var(--cyan);text-shadow:0 0 15px var(--blue)}
+.menu {
+  display:none;background:transparent;
+  color:var(--cyan);border:1px solid var(--border);
+  padding:9px 12px;border-radius:7px;font-size:19px;
+}
+section {padding:110px 0;scroll-margin-top:75px}
+.hero {min-height:100vh;display:flex;align-items:center;padding-top:120px}
+.hero-grid {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:25px;align-items:center;
+}
+.eyebrow {
+  color:var(--cyan);font:11px Orbitron;
+  letter-spacing:3px;margin-bottom:25px;
+}
+.live {
+  display:inline-block;width:8px;height:8px;
+  border-radius:50%;background:#00e9a5;
+  box-shadow:0 0 15px #00e9a5;margin-right:9px;
+}
+.hero h1 {
+  font:900 clamp(38px,5.5vw,72px)/1.2 Orbitron;
+  letter-spacing:-2px;
+}
+.gradient {
+  color:transparent;
+  background:linear-gradient(100deg,#fff,#61eaff,#168cff);
+  background-clip:text;
+  -webkit-background-clip:text;
+  filter:drop-shadow(0 0 12px #00c8ff45);
+}
+.hero h2 {
+  margin-top:20px;color:#c0d9f1;
+  font-size:19px;font-weight:400;letter-spacing:2px;
+}
+.hero p {
+  max-width:550px;color:var(--muted);
+  line-height:1.9;font-size:14px;margin-top:23px;
+}
+.buttons {display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.btn {
+  display:inline-block;padding:14px 22px;
+  border:1px solid var(--blue);border-radius:7px;
+  font-size:11px;font-weight:700;letter-spacing:1px;
+  color:var(--cyan);transition:.3s;
+}
+.btn.primary {
+  background:linear-gradient(120deg,#00c8ff,#0878df);
+  color:#00101b;border:0;
+  box-shadow:0 0 25px #00c8ff45;
+}
+.btn:hover {
+  transform:translateY(-4px);
+  box-shadow:0 0 30px #00c8ff60;
+}
+#core {
+  display:block;width:100%;height:460px;
+  cursor:grab;touch-action:pan-y;
+}
+.section-heading {text-align:center;margin-bottom:50px}
+.section-heading small {
+  color:var(--cyan);font:11px Orbitron;letter-spacing:4px;
+}
+.section-heading h2 {
+  font:700 clamp(25px,4vw,39px) Orbitron;margin-top:15px;
+}
+.section-heading p {color:var(--muted);font-size:13px;margin-top:13px}
+.panel {
+  position:relative;
+  background:linear-gradient(140deg,rgba(15,38,68,.8),rgba(5,15,32,.8));
+  border:1px solid var(--border);
+  border-radius:16px;padding:27px;
+  backdrop-filter:blur(15px);
+  box-shadow:0 15px 40px #0005;
+  transition:border-color .3s,box-shadow .3s,transform .3s;
+  overflow:hidden;
+}
+.panel:before {
+  content:"";position:absolute;top:0;left:-100%;
+  width:60%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  transition:.6s;
+}
+.panel:hover:before {left:120%}
+.panel:hover {
+  border-color:#00c8ff85;
+  box-shadow:0 0 30px #00c8ff1b,0 15px 40px #0005;
+}
+.about-text {color:var(--muted);line-height:2;font-size:14px}
+.grid {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.skill-card {min-height:190px}
+.icon {
+  font-size:30px;margin-bottom:18px;
+  filter:drop-shadow(0 0 12px var(--blue));
+}
+.panel h3 {
+  color:var(--cyan);font:600 15px Orbitron;
+  margin-bottom:13px;
+}
+.panel p {color:var(--muted);font-size:13px;line-height:1.8}
+.tag {
+  display:inline-block;margin:14px 4px 0 0;
+  padding:5px 9px;border:1px solid var(--border);
+  color:var(--cyan);font-size:10px;border-radius:4px;
+}
+.project-card {min-height:270px;display:flex;flex-direction:column}
+.project-card a {
+  color:var(--cyan);font-size:12px;
+  margin-top:auto;padding-top:22px;
+}
+.stats {
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:18px;margin-top:24px;
+}
+.stat {
+  text-align:center;padding:22px;
+  border:1px solid var(--border);
+  border-radius:12px;background:#00c8ff08;
+}
+.stat strong {
+  display:block;font:700 27px Orbitron;color:var(--cyan);
+}
+.stat span {font-size:10px;color:var(--muted)}
+.contact-box {
+  text-align:center;max-width:750px;
+  margin:auto;padding:45px 25px;
+}
+.contact-box p {
+  color:var(--muted);font-size:14px;
+  line-height:1.9;margin-top:15px;
+}
+.reveal {
+  opacity:0;transform:translateY(30px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+.reveal.visible {opacity:1;transform:translateY(0)}
+footer {
+  text-align:center;padding:27px;
+  color:var(--muted);font-size:11px;
+  border-top:1px solid var(--border);
+}
+@media(max-width:850px) {
+  .hero-grid {grid-template-columns:1fr;text-align:center}
+  .hero p {margin-left:auto;margin-right:auto}
+  .buttons {justify-content:center}
+  #core {height:350px}
+  .grid {grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px) {
+  .menu {display:block}
+  .navlinks {
+    display:none;position:absolute;top:76px;left:0;
+    width:100%;padding:25px;
+    background:#071326;flex-direction:column;gap:23px;
+  }
+  .navlinks.open {display:flex}
+  .grid,.stats {grid-template-columns:1fr}
+  section {padding:80px 0}
+  .hero {padding-top:105px}
+  #core {height:300px}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {scroll-behavior:auto!important;transition:none!important}
+  .reveal {opacity:1;transform:none}
+}
+</style>
 </head>
 
 <body>
+<canvas id="universe"></canvas>
 
-  <nav>
-    <h2>Goutham.</h2>
-    <div>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<header>
+<nav class="container">
+  <a href="#home" class="logo">GOUTHAM<span class="gradient">.AI</span></a>
+  <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+  <ul class="navlinks" id="navlinks">
+    <li><a href="#home">HOME</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#skills">SKILLS</a></li>
+    <li><a href="#projects">PROJECTS</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+  </ul>
+</nav>
+</header>
 
-  <section class="hero" id="home">
-    <p class="highlight">HELLO, WELCOME TO MY PORTFOLIO</p>
-    <h1>Hi, I'm <span class="highlight">Goutham</span></h1>
-    <h2>Data Analyst</h2>
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+  <div>
+    <div class="eyebrow"><span class="live"></span> JARVIS SYSTEM ONLINE</div>
+    <h1>THINK IN<br><span class="gradient">DATA.</span><br>CREATE IMPACT.</h1>
+    <h2>HI, I'M ANNAGIRI GOUTHAM</h2>
     <p>
-      I turn raw data into meaningful insights using
-      Excel, SQL, Power BI and Python. I enjoy solving
-      problems and helping businesses make data-driven decisions.
+      A Data Analyst passionate about transforming
+      raw information into meaningful insights.
+      I explore, analyse and visualize data using
+      Excel, SQL, Power BI and Python.
     </p>
-    <a class="btn" href="#projects">Explore My Projects</a>
-  </section>
-
-  <section class="about" id="about">
-    <h2 class="section-title">About Me</h2>
-    <p>
-      I am an aspiring Data Analyst with a background in
-      Data Analytics. I have developed skills in data cleaning,
-      data analysis, visualization and statistical analysis.
-      I enjoy working with real-world datasets and transforming
-      information into useful business insights.
-    </p>
-  </section>
-
-  <section id="skills">
-    <h2 class="section-title">My Skills</h2>
-    <div class="skills">
-      <div class="card">
-        <h3>Advanced Excel</h3>
-        <p>Data cleaning, formulas, pivot tables and reporting.</p>
-      </div>
-      <div class="card">
-        <h3>SQL</h3>
-        <p>Data querying, filtering, joins and analysis.</p>
-      </div>
-      <div class="card">
-        <h3>Power BI</h3>
-        <p>Interactive dashboards and data visualization.</p>
-      </div>
-      <div class="card">
-        <h3>Python</h3>
-        <p>Pandas, NumPy, Matplotlib and exploratory data analysis.</p>
-      </div>
-      <div class="card">
-        <h3>Statistics</h3>
-        <p>Statistical analysis and interpreting data.</p>
-      </div>
+    <div class="buttons">
+      <a href="#projects" class="btn primary">EXPLORE MY WORK ↗</a>
+      <a href="#contact" class="btn">LET'S CONNECT</a>
     </div>
-  </section>
+  </div>
+  <div>
+    <canvas id="core" aria-label="Interactive 3D holographic globe"></canvas>
+  </div>
+</div>
+</section>
 
-  <section id="projects">
-    <h2 class="section-title">My Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Student Planning Analysis Dashboard</h3>
-        <p>
-          A data analytics project focused on student planning
-          and dashboard-based analysis.
-        </p>
-        <a href="https://github.com/AnnagiriGoutham18/Student-Planning-Analysis-Dashboard"
-           target="_blank" rel="noopener noreferrer">
-          View Project on GitHub →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">Let's Connect</h2>
-    <p>Interested in data analytics projects or freelance collaboration?</p>
-    <p>
-      GitHub:
-      <a href="https://github.com/AnnagiriGoutham18"
-         target="_blank" rel="noopener noreferrer">
-        Visit My GitHub
-      </a>
+<section id="about">
+<div class="container reveal">
+  <div class="section-heading">
+    <small>01 / INTRODUCTION</small>
+    <h2>THE PERSON BEHIND <span class="gradient">THE DATA</span></h2>
+    <p>Turning curiosity into meaningful analysis.</p>
+  </div>
+  <div class="panel">
+    <p class="about-text">
+      I'm Annagiri Goutham, an aspiring Data Analyst
+      with a background in Data Analytics. I work with
+      Advanced Excel, SQL, Power BI, Python and Statistics.
+      My interests include data cleaning, exploratory
+      data analysis, dashboard development and data storytelling.
+      I enjoy solving problems and communicating useful
+      insights through data.
     </p>
-  </section>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>05+</strong><span>CORE SKILL AREAS</span></div>
+    <div class="stat"><strong>01+</strong><span>SHOWCASED PROJECT</span></div>
+    <div class="stat"><strong>100%</strong><span>PASSION FOR LEARNING</span></div>
+  </div>
+</div>
+</section>
 
-  <footer>
-    <p>© 2026 Goutham | Data Analyst Portfolio</p>
-  </footer>
+<section id="skills">
+<div class="container reveal">
+  <div class="section-heading">
+    <small>02 / TECHNOLOGY MATRIX</small>
+    <h2>MY <span class="gradient">SKILLS</span></h2>
+    <p>The tools powering my analytical workflow.</p>
+  </div>
+  <div class="grid">
+    <div class="panel skill-card tilt">
+      <div class="icon">▦</div>
+      <h3>ADVANCED EXCEL</h3>
+      <p>Data cleaning, formulas, pivot tables and reporting.</p>
+      <span class="tag">EXCEL</span><span class="tag">REPORTING</span>
+    </div>
+    <div class="panel skill-card tilt">
+      <div class="icon">⌘</div>
+      <h3>SQL</h3>
+      <p>Data querying, filtering, joins and analytical queries.</p>
+      <span class="tag">SQL</span><span class="tag">JOINS</span>
+    </div>
+    <div class="panel skill-card tilt">
+      <div class="icon">◫</div>
+      <h3>POWER BI</h3>
+      <p>Interactive dashboards and business visualization.</p>
+      <span class="tag">POWER BI</span><span class="tag">DAX</span>
+    </div>
+    <div class="panel skill-card tilt">
+      <div class="icon">🐍</div>
+      <h3>PYTHON</h3>
+      <p>Pandas, NumPy, Matplotlib and exploratory data analysis.</p>
+      <span class="tag">PYTHON</span><span class="tag">PANDAS</span>
+    </div>
+    <div class="panel skill-card tilt">
+      <div class="icon">∑</div>
+      <h3>STATISTICS</h3>
+      <p>Statistical analysis and data interpretation.</p>
+      <span class="tag">STATISTICS</span>
+    </div>
+    <div class="panel skill-card tilt">
+      <div class="icon">◉</div>
+      <h3>DATA STORYTELLING</h3>
+      <p>Turning analysis into clear, useful business insights.</p>
+      <span class="tag">INSIGHTS</span>
+    </div>
+  </div>
+</div>
+</section>
 
+<section id="projects">
+<div class="container reveal">
+  <div class="section-heading">
+    <small>03 / SELECTED WORK</small>
+    <h2>FEATURED <span class="gradient">PROJECTS</span></h2>
+    <p>Practical work and analytical demonstrations.</p>
+  </div>
+  <div class="grid">
+    <div class="panel project-card tilt">
+      <div class="icon">📊</div>
+      <h3>STUDENT PLANNING ANALYSIS</h3>
+      <p>
+        A student planning analysis project showcasing
+        analytical thinking and dashboard presentation.
+      </p>
+      <div>
+        <span class="tag">DATA ANALYTICS</span>
+        <span class="tag">DASHBOARD</span>
+      </div>
+      <a href="https://github.com/AnnagiriGoutham18/Student-Planning-Analysis-Dashboard"
+      target="_blank" rel="noopener noreferrer">VIEW PROJECT ON GITHUB ↗</a>
+    </div>
+    <div class="panel project-card tilt">
+      <div class="icon">📈</div>
+      <h3>MORE PROJECTS COMING</h3>
+      <p>
+        New analytical projects will be showcased here
+        as they are completed and documented.
+      </p>
+      <div><span class="tag">EXCEL</span><span class="tag">SQL</span></div>
+    </div>
+    <div class="panel project-card tilt">
+      <div class="icon">🐍</div>
+      <h3>PYTHON DATA ANALYSIS</h3>
+      <p>
+        Exploratory analysis and visualization
+        using Python data libraries.
+      </p>
+      <div><span class="tag">PYTHON</span><span class="tag">PANDAS</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container reveal">
+  <div class="section-heading">
+    <small>04 / CONNECTION ESTABLISHED</small>
+    <h2>LET'S BUILD <span class="gradient">SOMETHING</span></h2>
+  </div>
+  <div class="panel contact-box">
+    <h3>HAVE A DATA CHALLENGE?</h3>
+    <p>
+      Interested in analytics projects, freelance collaboration
+      or data-driven solutions? Let's connect.
+    </p>
+    <div class="buttons" style="justify-content:center">
+      <a class="btn primary"
+      href="https://github.com/AnnagiriGoutham18"
+      target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+      <a class="btn" href="mailto:YOUR_EMAIL@gmail.com">EMAIL ME ↗</a>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+© 2026 ANNAGIRI GOUTHAM | DESIGNED WITH DATA & CURIOSITY
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const navlinks = document.getElementById('navlinks');
+document.getElementById('menu').addEventListener('click',()=>{
+  navlinks.classList.toggle('open');
+});
+navlinks.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>navlinks.classList.remove('open'));
+});
+
+// Reveal animations
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting)e.target.classList.add('visible');
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// 3D tilt cards
+document.querySelectorAll('.tilt').forEach(card=>{
+  card.addEventListener('pointermove',e=>{
+    if(e.pointerType==='touch')return;
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5;
+    const y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=
+      `perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-5px)`;
+  });
+  card.addEventListener('pointerleave',()=>card.style.transform='');
+});
+
+// Actual 3D scene
+if(window.THREE){
+  const THREEJS=window.THREE;
+
+  // Particle universe
+  const universe=document.getElementById('universe');
+  const bgScene=new THREEJS.Scene();
+  const bgCamera=new THREEJS.PerspectiveCamera(65,innerWidth/innerHeight,.1,500);
+  bgCamera.position.z=65;
+  const bgRenderer=new THREEJS.WebGLRenderer({
+    canvas:universe,alpha:true,antialias:false
+  });
+  bgRenderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+  bgRenderer.setSize(innerWidth,innerHeight);
+
+  const particleCount=850;
+  const particlePositions=new Float32Array(particleCount*3);
+  for(let i=0;i<particleCount;i++){
+    particlePositions[i*3]=(Math.random()-.5)*120;
+    particlePositions[i*3+1]=(Math.random()-.5)*90;
+    particlePositions[i*3+2]=(Math.random()-.5)*90;
+  }
+  const particleGeometry=new THREEJS.BufferGeometry();
+  particleGeometry.setAttribute('position',
+    new THREEJS.BufferAttribute(particlePositions,3));
+  const particles=new THREEJS.Points(
+    particleGeometry,
+    new THREEJS.PointsMaterial({
+      color:0x16baff,size:.15,transparent:true,opacity:.8
+    })
+  );
+  bgScene.add(particles);
+
+  // Holographic core
+  const canvas=document.getElementById('core');
+  const scene=new THREEJS.Scene();
+  const camera=new THREEJS.PerspectiveCamera(
+    45,canvas.clientWidth/canvas.clientHeight,.1,100
+  );
+  camera.position.z=5.3;
+
+  const renderer=new THREEJS.WebGLRenderer({
+    canvas,alpha:true,antialias:true
+  });
+  renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));
+  renderer.setSize(canvas.clientWidth,canvas.clientHeight);
+
+  const coreGroup=new THREEJS.Group();
+  scene.add(coreGroup);
+
+  const wire=new THREEJS.Mesh(
+    new THREEJS.IcosahedronGeometry(1.25,4),
+    new THREEJS.MeshBasicMaterial({
+      color:0x00aaff,wireframe:true,transparent:true,opacity:.45
+    })
+  );
+  coreGroup.add(wire);
+
+  const innerSphere=new THREEJS.Mesh(
+    new THREEJS.SphereGeometry(.86,48,48),
+    new THREEJS.MeshBasicMaterial({
+      color:0x087fff,transparent:true,opacity:.15
+    })
+  );
+  coreGroup.add(innerSphere);
+
+  const glowSphere=new THREEJS.Mesh(
+    new THREEJS.SphereGeometry(.45,32,32),
+    new THREEJS.MeshBasicMaterial({
+      color:0x16cfff,transparent:true,opacity:.25
+    })
+  );
+  coreGroup.add(glowSphere);
+
+  // Points over the globe
+  const n=1300;
+  const dotPositions=new Float32Array(n*3);
+  for(let i=0;i<n;i++){
+    const u=Math.random()*2-1;
+    const a=Math.random()*Math.PI*2;
+    const r=1.31;
+    const s=Math.sqrt(1-u*u);
+    dotPositions[i*3]=r*s*Math.cos(a);
+    dotPositions[i*3+1]=r*u;
+    dotPositions[i*3+2]=r*s*Math.sin(a);
+  }
+  const dotGeometry=new THREEJS.BufferGeometry();
+  dotGeometry.setAttribute('position',
+    new THREEJS.BufferAttribute(dotPositions,3));
+  const dotCloud=new THREEJS.Points(
+    dotGeometry,
+    new THREEJS.PointsMaterial({
+      color:0x8bf5ff,size:.023,transparent:true,opacity:.95
+    })
+  );
+  coreGroup.add(dotCloud);
+
+  // Orbiting rings
+  const ringMaterial=new THREEJS.MeshBasicMaterial({
+    color:0x00d5ff,transparent:true,opacity:.8
+  });
+  const ring1=new THREEJS.Mesh(
+    new THREEJS.TorusGeometry(1.72,.009,8,140),ringMaterial
+  );
+  ring1.rotation.x=1.1;
+  coreGroup.add(ring1);
+
+  const ring2=new THREEJS.Mesh(
+    new THREEJS.TorusGeometry(1.9,.006,8,140),
+    new THREEJS.MeshBasicMaterial({color:0x227aff,transparent:true,opacity:.7})
+  );
+  ring2.rotation.y=1.1;
+  ring2.rotation.x=.5;
+  coreGroup.add(ring2);
+
+  const ring3=new THREEJS.Mesh(
+    new THREEJS.TorusGeometry(2.05,.004,8,140),
+    new THREEJS.MeshBasicMaterial({color:0x70eaff,transparent:true,opacity:.45})
+  );
+  ring3.rotation.x=1.55;
+  coreGroup.add(ring3);
+
+  let mouseX=0,mouseY=0;
+  canvas.addEventListener('pointermove',e=>{
+    const r=canvas.getBoundingClientRect();
+    mouseX=((e.clientX-r.left)/r.width-.5)*.8;
+    mouseY=((e.clientY-r.top)/r.height-.5)*.8;
+  });
+
+  function resize(){
+    bgCamera.aspect=innerWidth/innerHeight;
+    bgCamera.updateProjectionMatrix();
+    bgRenderer.setSize(innerWidth,innerHeight);
+
+    camera.aspect=canvas.clientWidth/canvas.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(canvas.clientWidth,canvas.clientHeight);
+  }
+  window.addEventListener('resize',resize);
+
+  function animate(){
+    requestAnimationFrame(animate);
+    particles.rotation.y+=.0003;
+    particles.rotation.x+=.0001;
+    bgRenderer.render(bgScene,bgCamera);
+
+    coreGroup.rotation.y+=.0025;
+    coreGroup.rotation.x+=(mouseY-coreGroup.rotation.x)*.025;
+    coreGroup.rotation.z+=(mouseX-coreGroup.rotation.z)*.025;
+    ring1.rotation.z+=.002;
+    ring2.rotation.z-=.0015;
+    ring3.rotation.y+=.001;
+
+    renderer.render(scene,camera);
+  }
+  animate();
+}
+</script>
 </body>
 </html>
+
 
